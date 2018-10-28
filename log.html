@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title><link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<header>
+		<nav class="nav">
+				<div class="logo"><a href="index.html"><img src="img/logo.png"></a></div>
+				<div class="logo-left">
+					<ul class="row nav-menu">
+					<li><a href="order.html">Menu</a></li>
+					<li><a href="history.html">History</a></li>
+					<li><a href="adminlog.html">Admin</a></li>
+					<li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+					<li><input type="text" placeholder="Search.."></li>
+				</ul>
+			</div>
+		</nav>			
+	</header>
+	<div class="container">
+		<section class="section-log">
+			<div class="row user-log">
+				<form action="index.html" class="log-form" id="log-form" name="log-form" onSubmit="return validateForm()" method="POST">
+				<div class="log-class" id="log-class">
+					<h1 class="hco">Sign In</h1>
+
+					<input type=email class="name type="text" placeholder="Enter Email" name="email" required><br>
+
+					<input type="password" class="password" type="password" placeholder="Enter Password" name="Password" required><br>
+					<button type="submit" class="logbtn"><a href="index.html">Sign in</a></button>
+					<div class="acct">Don't have an account? <span class="sig" id="sig"><a href="#">Sign Up</a></span></div>
+							    
+				</div>
+				</form>
+
+				<form action="index.html" class="sign-form" id="sign-form">
+				<div class="log-class" id="log-class">
+					<h1 class="hco">Sign Up</h1>
+
+					<input class="user-name type="text" placeholder="Name" name="name" required><br>
+
+					<input input type="email" class="name type="text" placeholder="Enter Email" name="email" required><br>
+
+					<input class="password" type="password" placeholder="Enter Password" name="Password" required><br>
+
+					<button type="submit" class="logbtn"><a href="index.html">Sign up</a></button>
+					<div class="acct">Already have an account? <span class="sig" id="log"><a href="#">Sign In</a></span></div>
+							    
+				</div>
+				</form>
+			</div>
+		</section>
+	</div>
+	<footer>
+				<span class="txt">The Fast Food Fast app makes it easy to go through our menu 
+				and order your fast food from the comfort of your home and have it delivered in no time.</span>
+				<span class="cr"><p>&copy; 2018 fast food fast<p></span>
+			
+			
+	</footer>
+<script src="index.js"></script>
+<script>
+	let x =document.getElementById('sig');
+	let y =document.getElementById('log');
+	x.onclick = function logBtnClicked(){
+				console.log('h');
+				document.getElementById('log-form').style.display = "none";
+                document.getElementById('sign-form').style.display = "block"
+            }
+
+	y.onclick = function signBtnClicked(){
+				console.log('g');
+				document.getElementById('sign-form').style.display = "none";
+                document.getElementById('log-form').style.display = "block";
+
+				}			
+
+
+
+
+</script>
+
+
+</body>
+</html>
