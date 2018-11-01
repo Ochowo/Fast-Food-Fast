@@ -34,5 +34,5 @@ app.post('/api/orders/', (req, res) => {
     price: req.body.price,
   };
   db.push(order);
-  res.send('Order added successfully');
+  res.send('Order has been added successfully');
 });
