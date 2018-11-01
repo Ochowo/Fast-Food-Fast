@@ -34,7 +34,7 @@ app.post('/api/orders/', (req, res) => {
     price: req.body.price,
   };
   db.push(order);
-  res.send('Order has been added successfully');
+  res.send('Order added successfully');
 });
 
 const port = process.env.PORT || 8080;
