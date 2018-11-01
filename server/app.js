@@ -24,7 +24,7 @@ app.get('/api/orders/:id', (req, res) => {
     order,
   });
 });
-// get a single order
+// creat an order
 app.post('/api/orders/', (req, res) => {
   const order = {
     id: db.length + 1,
@@ -34,5 +34,9 @@ app.post('/api/orders/', (req, res) => {
     price: req.body.price,
   };
   db.push(order);
-  res.send('Order added successfuly');
+  res.send('Order has been added successfully');
 });
+
+const port = process.env.PORT || 8080;
+app.listen(port, () => console.log(`Listening on port ${port}....`));
+export default app;
