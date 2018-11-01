@@ -36,7 +36,16 @@ app.post('/api/orders/', (req, res) => {
   db.push(order);
   res.send('Order added successfully');
 });
-
+// update an existing order
+app.put('/api/orders/:id', (req, res) => {
+  const order = db.find(c => c.id === parseInt((req.params.id), 10));
+  if (!order) res.status(404).send('Order not found');
+  order.name = req.body.name;
+  order.date = new Date().toDateString();
+  order.status = req.body.status;
+  order.price = req.body.price;
+  res.send('order updated successfuly');
+});
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Listening on port ${port}....`));
 export default app;
