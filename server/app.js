@@ -24,3 +24,15 @@ app.get('/api/orders/:id', (req, res) => {
     order,
   });
 });
+// get a single order
+app.post('/api/orders/', (req, res) => {
+  const order = {
+    id: db.length + 1,
+    name: req.body.name,
+    date: new Date().toDateString(),
+    status: req.body.status,
+    price: req.body.price,
+  };
+  db.push(order);
+  res.send('Order added successfuly');
+});
