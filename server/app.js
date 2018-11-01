@@ -20,7 +20,7 @@ app.get('/api/orders/:id', (req, res) => {
   if (!order) res.status(404).send('Order does not exist');
   res.status(200).send({
     success: 'true',
-    message: 'order retrieved successfully',
+    message: 'order successfully retrieved',
     order,
   });
 });
