@@ -2,7 +2,7 @@ import chai from 'chai';
 
 import request from 'supertest';
 
-import app from '../server/app';
+import app from '../app';
 
 const { expect } = chai;
 
