@@ -3,11 +3,11 @@ import OrdersController from '../controllers/OrdersController';
 // create a route handler with express.Router()
 const router = express.Router();
 // get all orders
-router.get('/api/orders', OrdersController.getAllOrders);
+router.get('/orders', OrdersController.getAllOrders);
 // get a single order
-router.get('/api/orders/:id', OrdersController.getOrder);
+router.get('/order/:id', OrdersController.getOrder);
 // creat an order
-router.post('/api/orders/', OrdersController.createOrder);
+router.post('/orders/', OrdersController.createOrder);
 // update an existing order
-router.put('/api/orders/:id', OrdersController.updateOrder);
+router.put('/orders/:id', OrdersController.updateOrder);
 export default router;
