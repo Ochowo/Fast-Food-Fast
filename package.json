@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/app.js --exec babel-node --",
-    "test": "mocha --require babel-register server/tests/**/*.js --timeout 100000 --exit"
+    "test": "nyc --reporter=html --reporter=text mocha --require babel-register server/tests/**/*.js --timeout 100000 --exit",
+    "coverage": "nyc --reporter=html --reporter=text --reporter=lcov mocha --reporter spec --require babel-register server/tests/**/*.js --timeout 100000 --exit",
+    "coveralls": "npm run coverage -- --report lcovonly && cat coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -27,9 +29,11 @@
     "supertest": "^3.3.0"
   },
   "devDependencies": {
+    "coveralls": "^3.0.2",
     "eslint": "^5.8.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "nodemon": "^1.18.5"
+    "nodemon": "^1.18.5",
+    "nyc": "^13.1.0"
   }
 }
