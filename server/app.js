@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import router from './router/index';
-// Set up the express app
+// Setup the express app
 const app = express();
 // Parse incoming requests data
 app.use(bodyParser.json());
